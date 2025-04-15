@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Ass1stant D — A Meal Assistant for T1D Teens</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 2rem auto; padding: 1rem; line-height: 1.6; color: #333; }
+    h1, h2 { color: #2c3e50; }
+    a { color: #0077cc; text-decoration: none; }
+    code, pre { background-color: #f4f4f4; padding: 0.5rem; display: block; overflow-x: auto; }
+  </style>
+</head>
+<body>
+
+<h1>The Ass1stant D — A Meal Assistant for T1D Teens</h1>
+
+<p><em>by a biomedical AI researcher & first-time LLM builder</em></p>
+
+<p><a href="https://www.kaggle.com/code/giuraffdeluca/the-ass1stant-d-meal-assistant-for-t1d-patients" target="_blank">Kaggle notebook</a></p>
+
+<h2>Where it all started</h2>
+
+<p>This project began with a phone call. My cousin, 14 years old, had just been diagnosed with type 1 diabetes. She was overwhelmed. So was I, honestly. Despite years working in biomedical AI, I’d never touched language models. But something about GenAI made me curious. And this time, it was personal.</p>
+
+<p>I set out to build something that might actually help her—not years from now, but now. Something approachable. Something practical. A small AI companion that could help her (and kids like her) make smarter food choices, without sounding like a textbook or a glucose monitor.</p>
+
+<h2>The Ass1stant D</h2>
+
+<p>The Ass1stant D is a meal-planning assistant for young people living with T1D. It doesn’t just suggest “healthy meals”—it considers glycemic load, fiber, insulin dosing, and the kind of questions a teenager might actually ask. It tries to talk like a friend who knows their biology.</p>
+
+<p>Technically, it’s an agent-powered RAG pipeline backed by curated nutrition data and custom logic for T1D-specific analysis. But behind the tech, it’s just trying to answer: “What can I eat that won’t spike me later?”</p>
+
+<h2>What it does</h2>
+
+<ul>
+  <li>Takes in a user profile: age, weight, insulin plan, etc.</li>
+  <li>Parses food input (from ingredients or meals) and scores it for glycemic impact</li>
+  <li>Suggests alternatives or confirms good choices</li>
+  <li>Explains the reasoning in plain language</li>
+</ul>
+
+<h2>GenAI techniques used</h2>
+
+<ol>
+  <li><strong>Agents:</strong> Multi-turn agent that uses reasoning + tools to walk through carb scoring, substitutions, and explanations</li>
+  <li><strong>RAG:</strong> Grounded answers using vector search over USDA + hand-picked diabetes-safe recipes</li>
+  <li><strong>Function Calling:</strong> Nutrition analysis, insulin ratio math, and glycemic estimation are offloaded to Python functions</li>
+</ol>
+
+<h2>Example output</h2>
+
+<pre><code>{
+  "meal": "whole grain toast with avocado and egg",
+  "score": "low glycemic load",
+  "insulin_units": 1.5,
+  "explanation": "High in fiber, moderate fat and protein — slows glucose absorption. Low net carbs. Ideal for breakfast with minimal insulin."
+}
+</code></pre>
+
+<h2>What I learned</h2>
+
+<p>This was my first real dive into LangChain, Gemini, and prompt engineering. I had zero experience building agents before this week. It wasn’t smooth, but it worked. And now I know that with the right model, a good prompt, and a clear goal, GenAI can be genuinely useful. Even in healthcare.</p>
+
+<h2>Limitations</h2>
+
+<ul>
+  <li>This is just an MVP. Right now, document chunks are manually selected and injected into the vector store. In a real-world scenario, this should be backed by a vetted, medically-reviewed database—transformed and queried dynamically via LangChain pipelines.</li>
+  <li>It's not a medical device. It cannot replace a clinician or registered dietitian.</li>
+  <li>Ingredient parsing and matching are simplistic for now.</li>
+  <li>It assumes accurate and honest input from the user.</li>
+</ul>
+
+<h2>What’s next</h2>
+
+<p>I’m already thinking about what v2 might look like:</p>
+
+<ul>
+  <li>Replace the hand-curated chunks with a full medical knowledge base — parsed, embedded, and queried with LangChain</li>
+  <li>Integrate CGM APIs for feedback loops based on real glucose response</li>
+  <li>Expose the assistant via chat UI (and maybe voice) so it’s more accessible to teens</li>
+  <li>Add a caregiver view for shared decision-making</li>
+</ul>
+
+<h2>Final thoughts</h2>
+
+<p>This wasn’t just an experiment in GenAI—it was a way to channel concern into something useful. If even one kid with T1D finds it helpful, that’s more than enough to make this worth it.</p>
+
+<p><strong>— G.</strong></p>
+
+</body>
+</html>
