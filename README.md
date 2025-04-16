@@ -3,7 +3,7 @@
 This repo contains the project (blog and code) I submitted for [GenAI Intensive Course Capstone 2025Q1](https://www.kaggle.com/competitions/gen-ai-intensive-course-capstone-2025q1).  
 Submitted [Kaggle notebook](https://www.kaggle.com/code/giuraffdeluca/the-ass1stant-d-meal-assistant-for-t1d-patients).
 
-## The Ass1stant D
+## Overview
 
 The Ass1stant D is a meal-planning assistant designed for people living with T1D. It doesn’t just suggest “healthy meals”—it considers glycemic load, fiber, insulin dosing, and the kind of questions a patient might ask. It aims to talk like a friend who understands their biology.
 
