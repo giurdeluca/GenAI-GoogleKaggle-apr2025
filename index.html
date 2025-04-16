@@ -8,6 +8,8 @@
     h1, h2 { color: #2c3e50; }
     a { color: #0077cc; text-decoration: none; }
     code, pre { background-color: #f4f4f4; padding: 0.5rem; display: block; overflow-x: auto; }
+    ul, ol { margin-left: 1.5rem; }
+    p { margin-bottom: 1rem; }
   </style>
 </head>
 <body>
@@ -20,15 +22,15 @@
 
 <h2>Where it all started</h2>
 
-<p>This project began with a phone call. My cousin, 14 years old, had just been diagnosed with type 1 diabetes. She was overwhelmed. So was I, honestly. Despite years working in biomedical AI, I’d never touched language models. But something about GenAI made me curious. And this time, it was personal.</p>
+<p>This project began with a phone call. My 14-year-old cousin had just been diagnosed with type 1 diabetes. She was overwhelmed, and so was I. I wanted to help, but despite my two years in biomedical AI, I had never worked with language models. However, something about GenAI sparked my curiosity, and this time, it was personal.</p>
 
-<p>I set out to build something that might actually help her—not years from now, but now. Something approachable. Something practical. A small AI companion that could help her (and kids like her) make smarter food choices, without sounding like a textbook or a glucose monitor.</p>
+<p>The Gen AI Intensive Course came at the perfect time! With the expertise I gained in LLMs and agents, I set out to build something that could help her—not years from now, but right away. Something approachable and practical. A small AI companion to help her (and others like her) make smarter food choices, without sounding like a textbook or a glucose monitor.</p>
 
 <h2>The Ass1stant D</h2>
 
-<p>The Ass1stant D is a meal-planning assistant for young people living with T1D. It doesn’t just suggest “healthy meals”—it considers glycemic load, fiber, insulin dosing, and the kind of questions a teenager might actually ask. It tries to talk like a friend who knows their biology.</p>
+<p>The Ass1stant D is a meal-planning assistant designed for people living with T1D. It doesn’t just suggest “healthy meals”—it considers glycemic load, fiber, insulin dosing, and the kind of questions a teenager might ask. It aims to talk like a friend who understands their biology.</p>
 
-<p>Technically, it’s an agent-powered RAG pipeline backed by curated nutrition data and custom logic for T1D-specific analysis. But behind the tech, it’s just trying to answer: “What can I eat that won’t spike me later?”</p>
+<p>Technically, it’s an agent-powered RAG pipeline backed by nutritional advice and custom logic for T1D-specific analysis. But behind the tech, it’s simply trying to answer: “What can I eat that won’t spike my glucose later?”</p>
 
 <h2>What it does</h2>
 
@@ -42,43 +44,33 @@
 <h2>GenAI techniques used</h2>
 
 <ol>
-  <li><strong>Agents:</strong> Multi-turn agent that uses reasoning + tools to walk through carb scoring, substitutions, and explanations</li>
-  <li><strong>RAG:</strong> Grounded answers using vector search over USDA + hand-picked diabetes-safe recipes</li>
-  <li><strong>Function Calling:</strong> Nutrition analysis, insulin ratio math, and glycemic estimation are offloaded to Python functions</li>
+  <li><strong>Agents:</strong> A multi-turn agent that uses reasoning and tools to walk through carb scoring, substitutions, and explanations.</li>
+  <li><strong>RAG:</strong> Provides grounded answers using vector search over USDA data and hand-picked diabetes-safe recipes.</li>
+  <li><strong>Function Calling:</strong> Offloads nutrition analysis, insulin ratio math, and glycemic estimation to Python functions.</li>
 </ol>
-
-<h2>Example output</h2>
-
-<pre><code>{
-  "meal": "whole grain toast with avocado and egg",
-  "score": "low glycemic load",
-  "insulin_units": 1.5,
-  "explanation": "High in fiber, moderate fat and protein — slows glucose absorption. Low net carbs. Ideal for breakfast with minimal insulin."
-}
-</code></pre>
 
 <h2>What I learned</h2>
 
-<p>This was my first real dive into LangChain, Gemini, and prompt engineering. I had zero experience building agents before this week. It wasn’t smooth, but it worked. And now I know that with the right model, a good prompt, and a clear goal, GenAI can be genuinely useful. Even in healthcare.</p>
+<p>This was my first real dive into APIs, LangChain, Gemini, and prompt engineering. I had zero experience building agents before this project. It wasn’t smooth, but it worked. Now I know that with the right model, a good prompt, and a clear goal, GenAI can be genuinely useful—even in healthcare.</p>
 
 <h2>Limitations</h2>
 
 <ul>
-  <li>This is just an MVP. Right now, document chunks are manually selected and injected into the vector store. In a real-world scenario, this should be backed by a vetted, medically-reviewed database—transformed and queried dynamically via LangChain pipelines.</li>
-  <li>It's not a medical device. It cannot replace a clinician or registered dietitian.</li>
+  <li>This is just an MVP. Right now, document chunks are manually selected and injected into the vector store.</li>
+  <li>It's not a medical device and cannot replace a clinician or registered dietitian.</li>
   <li>Ingredient parsing and matching are simplistic for now.</li>
   <li>It assumes accurate and honest input from the user.</li>
 </ul>
 
 <h2>What’s next</h2>
 
-<p>I’m already thinking about what v2 might look like:</p>
+<p>I’m already thinking about what a final version might look like:</p>
 
 <ul>
-  <li>Replace the hand-curated chunks with a full medical knowledge base — parsed, embedded, and queried with LangChain</li>
-  <li>Integrate CGM APIs for feedback loops based on real glucose response</li>
-  <li>Expose the assistant via chat UI (and maybe voice) so it’s more accessible to teens</li>
-  <li>Add a caregiver view for shared decision-making</li>
+  <li>Replace the hand-curated chunks with a full medical knowledge base—parsed, embedded, and queried with LangChain.</li>
+  <li>Integrate CGM APIs for feedback loops based on real glucose response.</li>
+  <li>Expose the assistant via a chat UI (and maybe voice) to make it more accessible.</li>
+  <li>Add a caregiver view for shared decision-making.</li>
 </ul>
 
 <h2>Final thoughts</h2>
